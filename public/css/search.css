@@ -1,0 +1,34 @@
+.search-container {
+    position: relative;
+    display: inline-block;
+} 
+.search-input {
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    width: 15rem;
+    padding: 0.8rem;
+    border: 0.1rem solid #00A783;
+    border-radius: 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    transition: width 0.4s ease-in-out;
+}
+.search-icon {
+    position: absolute;
+    top: 1.2rem;
+    right: 0.9rem;
+    color: #00A783;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+  
+.search-input:focus {
+    width: 20rem;
+}
+@media screen and (max-width: 1045px){
+    .search-container{
+        display: none;
+    }
+    
+}
+  

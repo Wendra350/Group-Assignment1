@@ -1,0 +1,72 @@
+<div class="dashboard">
+
+    <div  class="dashboard-main">
+            <!-- Graphs -->
+        <div id="graph-dashboard" class="dashboard-graphs">
+            <div class="progress-container">
+                <div class="discount-header">Discount</div>
+                <% data.discount.forEach(function(item){ %>
+
+                <div class="discount"><%= item.product%></div>
+                <%= item.discount%>% &nbsp;
+                 <progress id="custom-progress" value= <%= item.discount%> max="100"></progress>
+                 <br><br>
+                <% });  %>
+
+
+               <br><br>
+            </div>
+            <div id="bar-chart-container" class="bar-chart flex-graph-box">
+                <canvas id="bar-chart">
+                </canvas>
+
+            </div>
+            <div id='pie-chart-container' class="pie-chart flex-graph-box"> 
+                <canvas id="pie-chart">
+                </canvas>
+            </div>
+            <div id='line-chart-container' class="line-chart flex-graph-box">
+                <canvas id="line-chart">
+                </canvas>
+            </div>
+            <div id='area-chart-container' class="area-chart  flex-graph-box">
+                <canvas id="area-chart">
+                </canvas>
+            </div>
+            <div id='progress-bar-container' class="progress-bar flex-graph-box">
+                
+                <canvas id="doughnut-chart">
+                </canvas>
+            </div>
+            
+            
+
+            <script>
+                let studentNames =  '<%= data.studentNames %>'
+                let studentHeight = '<%= data.studentHeight %>'
+
+                let year = '<%= data.year %>'
+                let passRate = '<%= data.passRate %>'
+
+                let month = '<%= data.month %>'
+                let sales = '<%= data.sales %>'
+                let days = '<%= data.days %>'
+                let temperature = '<%= data.temperature %>'
+                let assignments = '<%= data.assignment %>'
+                let weights = '<%= data.weights %>'
+            </script>
+
+        </div>
+        
+        <script  src="js/graphs.js">
+        </script>
+        
+         <!-- Contact -->
+         <%- include("./contacts") %>
+       
+        
+            
+
+    </div>
+
+</div>

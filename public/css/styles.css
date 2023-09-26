@@ -1,0 +1,354 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f2f6fc;
+}
+.main-container{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(216, 134, 134);
+    display: flex;
+}
+.side-panel{
+    height: 100vh;
+    width: 18rem;
+    background-color:#263544;
+    overflow: scroll;
+}
+.container{
+    height: 100%;
+    width: 100vw;
+    background-color: rgb(10, 119, 119);
+    
+}
+
+.header{
+    height: 4rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0.3rem  1.3rem rgba(0, 0, 0, 0.1);
+    border-bottom: solid rgba(0, 0, 0, 0.1) 0.1rem;
+    display: flex;
+    flex-wrap: nowrap;
+
+} 
+.dashboard{
+    height: calc(100% - 4rem);
+    width: 100%;
+    background-color: #f2f6fc;
+    overflow: scroll;
+}
+.profile{
+    height: 6rem;
+    width: 100%;
+    background-color:#263544;
+    box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.05);
+    border-bottom: solid rgba(0, 0, 0, 0.1) 0.2rem;
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+}
+
+.profile-picture{
+    margin-top: 1rem;
+    
+}
+.profile-picture img{
+    width: 4rem;
+    height: auto;
+}
+.profile-name{
+    color: #fff;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.profile-status{
+    color:#2ecc72;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+}
+
+.icon i{
+    font-size: 1.5rem;
+    color: white;
+}
+.text{
+    color: white;
+    opacity: 0.6;
+    margin-left: 2rem;
+    margin-top: 0.3rem;
+}
+#dashboard-text{
+    opacity: 1;
+}
+.button{
+    cursor: pointer;
+    display: flex;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+
+}
+.nav-buttons{
+    margin-top: 2rem;
+}
+
+/*contacts card  styles*/
+.card-header{
+    height: 7rem;
+    margin-top: -1.2rem;
+    border-top-right-radius:0.3rem ;
+    border-top-left-radius:0.3rem ;
+}
+.container-contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    width: 21%;
+    text-align: center;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+    margin: 1rem;
+    margin-top: 2rem;
+    
+}
+
+.card-title {
+    position: relative;;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    padding-top: 1rem;
+    
+}
+
+.card-content {
+    font-size: 1.1rem;
+    color: #263544;
+    font-weight: bold;
+}
+.card-header i{
+    color: #fff;
+    font-size: 5rem;
+    margin-top: 1rem;
+    
+}
+
+.card-button {
+    background-color: #2864a5;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    margin: 0.5rem;
+}
+
+.card-button:hover {
+    opacity: 0.8;
+}
+.facebook{
+    background-color: #3B5999;
+}
+.google{
+    background-color: #D44837;
+}
+.whatsapp{
+    background-color: #00A783;
+}
+.telegram{
+    background-color: #00ACEE;
+}
+.item{
+    padding: 1rem;
+}
+
+.item button{
+    background-color: #00A783;
+}
+.btn{
+    margin-top: -0.9rem;
+}
+.settings{
+    margin-top: 0.3rem;
+    color: #213344;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-left: -1.8rem;
+}
+.settings-message-no{
+    box-sizing: content-box;
+    background-color: #00A783;
+    padding: 0.3rem;
+    color: white;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    
+}
+.nav-header{
+    color: #213344;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.nav-header i{
+    font-size: 1.5rem;
+    color: #00A783;
+}
+
+hr{
+    margin: 1rem;
+    border-radius: 0.1rem;
+    opacity: 0.8;
+}
+
+/* customize the scroll bar */
+.dashboard::-webkit-scrollbar{
+    width: 0.4rem;
+
+}
+.dashboard::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+}
+.side-panel::-webkit-scrollbar{
+    width: 0;
+}
+
+.bar{
+    display: none;
+    padding:1rem;
+    color: #213344;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.bar i{ 
+    font-size: 1.5rem;
+    color: #263544;
+}
+
+.dashboard-graphs{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex-graph-box{
+    box-sizing: border-box;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 57%;
+    height: auto;
+    margin: 0.5rem;
+}
+.discount{
+    text-align: center;
+    color: #213344;
+
+}
+.discount-header{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #213344;
+    padding-bottom: 1rem;
+}
+.nav-panel-buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.nav-general-button{
+    width: 42%;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    margin: 0.5rem;
+}
+.log-out-button{
+    background-color:#3199FF; 
+    
+}
+.learn-more-button{
+    background-color: #00A783;
+}
+
+.new{
+    background-color: #8078EC;
+    color: white;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+}
+
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 800px) {
+    .nav-header{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .side-panel{
+        display: none;
+    }
+    .item{
+        display: none;
+    }
+    .bar{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 830px) {
+   .card{
+    width: 80%;
+   } 
+    
+}
+@media (max-width: 668px){
+    .nav-panel-buttons{
+        width: 100%;
+    }
+    .log-out-button, .learn-more-button{
+        width: 80%;
+    } 
+}
+
+
+@media screen and (max-width: 1045px){
+    .card{
+        width: 40%;
+    }
+    .flex-graph-box{
+        width: 95%;
+    }
+    .new{
+        display:none;
+    }
+    
+}
+@media screen and (max-width: 1250px){
+    .log-out-button, .learn-more-button{
+        width: 60%;
+    }
+}

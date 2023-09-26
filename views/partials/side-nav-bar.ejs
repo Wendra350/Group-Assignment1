@@ -1,0 +1,124 @@
+<div class="side-panel">
+
+    <!-- Profile -->
+    <div class="profile">
+        <div class="profile-picture">
+            <img src="images/profile.png">
+        </div>
+        <div class="profile-text">
+            <div class="profile-name">
+                <%= data.appConfig.user %>
+
+            </div>
+            <div class="profile-status">
+                &#11044;&nbsp;Online
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+        <div class="button" onclick="dashboardFun()">
+            <div class="icon"> 
+                <i class="fa fa-dashboard" aria-hidden="true" style="color: #C68417"></i>
+            </div>
+            <div id="dashboard-text" class="text">
+                Dashboard
+            </div>
+        </div>
+
+        <div class="button" onclick="barGraphFun()">
+            <div class="icon"> 
+                <i class="fa fa-bar-chart" aria-hidden="true" style="color: #D3542B"></i>
+            </div>
+            <div id="bargraph-text" class="text">
+                Bar Graph
+            </div>
+        </div>
+
+        <div class="button" onclick="pieChartFun()">
+            <div class="icon"> 
+                <i class="fa fa-pie-chart" aria-hidden="true" style="color: #196DA0"></i>
+            </div>
+            <div id="piechart-text" class="text">
+                Pie Chart
+            </div>
+        </div>
+
+        <div class="button" onclick="lineGraphFun()">
+            <div class="icon"> 
+                <i class="fa fa-line-chart" aria-hidden="true" style="color: #E11E60"></i>
+            </div>
+            <div id='linegraph-text' class="text">
+                Line Graph
+            </div>
+        </div>
+
+        
+
+        <div class="button" onclick="areaChartFun()">
+            <div class="icon"> 
+                <i class="fa fa-area-chart" aria-hidden="true" style="color: #159689"></i>
+            </div>
+            <div id="areagraph-text" class="text">
+                Area Chart
+            </div>
+        </div>
+
+        
+        <div class="button" onclick="doughnutChartrFun()">
+            <div class="icon"> 
+                <i class="fa fa-circle-o-notch" aria-hidden="true" style="color: #06a149"></i>
+            </div>
+            <div  id="doughnutChart-text"class="text">
+                Doughnut Chart
+            </div>
+        </div>
+        <hr>
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-github" aria-hidden="true" style="color: #0ab49d"></i>
+            </div>
+            <div class="text">
+                View Projects
+            </div>
+            <div class="new">
+                New
+
+            </div>
+        </div>
+
+        
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-cloud-download" aria-hidden="true" style="color: #159689"></i>
+            </div>
+            <div class="text">
+                <%= data.appConfig.viewers %>+ viewers
+            </div>
+        </div>
+
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-diamond" aria-hidden="true" style="color: #159689"></i>
+            </div>
+            <div class="text">
+                Special Account
+            </div>
+        </div>
+
+        <div class="nav-panel-buttons">
+            <button class="log-out-button nav-general-button">
+                Sign Out
+            </button>
+            <button class="learn-more-button nav-general-button">
+                Learn More
+            </button>
+
+        </div>
+
+
+    </div>
+</div>
