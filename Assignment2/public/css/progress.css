@@ -1,0 +1,34 @@
+progress {
+    width: 80%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    height: 1rem;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ddd; 
+    border-radius: 0.7rem; 
+}
+
+progress::-webkit-progress-value {
+    background-color: #00A783; 
+    border-radius: 0.8rem; 
+}
+
+.progress-container{
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 32%;
+    height: auto;
+    margin: 0.5rem;
+}
+@media screen and (max-width: 1045px){
+    .progress-container{
+        width: 95%;
+        margin-top: 1rem;
+    }
+}

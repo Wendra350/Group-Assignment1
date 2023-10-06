@@ -1,0 +1,69 @@
+<div class="dashboard">
+
+    <div  class="dashboard-main">
+            <!-- Graphs -->
+        <div id="graph-dashboard" class="dashboard-graphs">
+            
+            <div id='progress-bar-container' class="progress-container flex-graph-box">
+                <% if (data.dataArray.length >= 3) { %>
+                    <h5 class="doughnut-header">Top 3 expensive products</h5>
+                    
+                    <div>
+                            
+                        <canvas id="doughnut-chart">
+                        </canvas>
+                    </div>
+                <% } else { %>
+                    <h5 class="doughnut-header">Add products to display chart</h5>
+                <% } %>
+            </div>
+            <div id="bar-chart-container" class="bar-chart flex-graph-box">
+                <canvas id="bar-chart">
+                </canvas>
+
+            </div>
+            <div id='area-chart-container' class="area-chart  flex-graph-box">
+                <canvas id="area-chart">
+                </canvas>
+            </div>
+            <div class="progress-container">
+                 <div class="discount-header">Password Strength</div>
+
+                <div class="pass-image">
+                    <img src="images/password.png">
+                </div>
+                <br><br>
+                
+                 <progress id="custom-progress" value= <%= data.appConfig.strength %> max="100"></progress>
+                 <% if (data.appConfig.strength <= 50) { %>
+                    <br>
+                    <div class="discount-header" style="font-size: 1rem; color: rgb(205, 5, 51); opacity: 0.5; ">Please! change your password to enhance security</div>
+                <% } else { %><br>
+                    <div class="discount-header" style="font-size: 1rem;">Your password is strong</div>
+                <% } %>
+            </div>
+            
+            
+
+            <script>
+                
+                let top3products = '<%= data.top3products %>'
+                let top3prices = '<%= data.top3prices %>'
+                let products = '<%= data.products %>'
+                let prices = '<%= data.prices %>'
+                let quantity = '<%= data.quantity %>'
+
+            </script>
+
+        </div>
+        
+        <script  src="js/graphs.js">
+        </script>
+        
+       
+        
+            
+
+    </div>
+
+</div>

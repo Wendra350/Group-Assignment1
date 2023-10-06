@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.appConfig.title %></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+    <link rel="stylesheet" href="css/removeProductsContainer.css">
+
+
+
+</head>
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <!-- side panel -->
+        
+        <%- include("./partials/side-nav-bar", {currentUrl: 'edit'}) %>
+        
+        <!-- Container -->
+        <div class="container">
+            
+         <%- include("./partials/header") %>
+
+            <!-- Dashboard -->
+            
+            <div class="dashboard">
+                <div  class="dashboard-main">
+                    <div class="data-container" id="data-container">
+
+                        <span id="total-records" style="display: none;"><%= data.dataArray.length %></span>
+                        <% if (data.dataArray.length > 0) { %>
+                            <div class="record sp bold">
+                                <div class="name sp bold">Product
+                                </div>
+                                <div class="price sp bold">Price
+                                </div>
+                                
+                                <div class="quantity sp bold">
+                                    Quantity
+                                </div>
+                                
+                                <div class="supplier sp bold">
+                                    Supplier
+                                </div>
+    
+                                <div class="form supplierEmail">
+                                    Edit&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            </div>
+                            
+                            <% data.dataArray.forEach((item, index) => { %>
+                                <div id=<%= 'r' + index  %> class="record sp">
+                                    <div class="name sp"  >
+                                        
+                                     <i class="fa fa-archive"></i>&nbsp;<span id=<%= 'n' + item.productID %>><%= item.productName %></span>
+                                    </div>
+                                    <div class="price sp" >
+                                        MWK <span id=<%= 'p' + item.productID %>><%= item.price %></span>
+                                    </div>
+                                    
+                                    <div class="quantity sp" >
+                                        <span id=<%= 'q' + item.productID %>><%= item.quantity %></span>
+                                    </div>
+                                    
+                                    <div class="supplier sp" >
+                                        <i class="fa fa-map-marker"></i>&nbsp;
+                                        <span id=<%= 's' + item.productID %>><%= item.supplier %></span>
+                                        <span style="display: none;" id=<%= 'sE' + item.productID %>><%= item.supplierEmail %></span>
+                                    </div>
+                                    <div class="form">
+                                            
+                                        <button  style="background-color: #04637a;" type="submit" id=<%= item.productID %> onclick="update(this.id)">
+                                            Edit
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                                  
+                            <% }); %>
+                        <% } else { %>
+                          <p class="content" style="text-align: center;">No Product available</p>
+                        <% } %>
+                    </div>
+                       
+                    
+                    <%- include("./partials/updateProductContainer.ejs") %>
+
+                </div>
+                
+                    <script src="js/updateProduct.js"></script>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.appConfig.title %></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/email.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+
+    
+
+</head>
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <!-- side panel -->
+        
+        <%- include("./partials/side-nav-bar", {currentUrl: 'email'}) %>
+        
+        <!-- Container -->
+        <div class="container">
+            
+         <%- include("./partials/header") %>
+
+            <!-- Dashboard -->
+            
+            <div class="dashboard" style="background-color: white;  ">
+              <div  class="dashboard-main" style="display:flex; justify-content:  center; margin-top: 6rem;" >
+                <div class="email-container" >
+                  <form action="http://localhost:3000/email-supplier" method="post" id="email-form">
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="email" >Email</label>
+                      </div>
+                      <div class="col-75">
+                        
+                        <select id="email" name="email">
+                          
+                          <% data.dataArray.forEach((item) => { %>
+                            <option ><%= item.supplierEmail %></option>
+                          
+                            <% }); %>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="subject">Subject</label>
+                      </div>
+                      <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <input type="submit" value="Send Email" id="email-button">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>

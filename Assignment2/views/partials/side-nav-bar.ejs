@@ -1,0 +1,128 @@
+<div class="side-panel">
+
+    <!-- Profile -->
+    <div class="profile">
+        <div class="profile-picture">
+            <img src="images/profile.png">
+        </div>
+        <div class="profile-text">
+            <div class="profile-name">
+                <%= data.appConfig.user %>
+
+            </div>
+            <div class="profile-status">
+                &#11044;&nbsp;Online
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-dashboard" aria-hidden="true" style="color: #C68417"></i>
+            </div>
+            <div  id="dashboard-text" class="text">
+                <a  href="http://localhost:3000/" class="<%= currentUrl === 'dashboard' ? '' : 'active' %>">Dashboard</a>
+            </div>
+        </div>
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-plus-square" aria-hidden="true" style="color: #0dbdbd"></i>
+            </div>
+            <div id="add-text" class="text">
+                <a href="http://localhost:3000/add-product" class="<%= currentUrl === 'add' ? '' : 'active' %>">Add Product</a>
+            </div>
+        </div>
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-gift" aria-hidden="true" style="color: #1692e0"></i>
+            </div>
+            <div id="view-text" class="text">
+                <a href="http://localhost:3000/view-products" class="<%= currentUrl === 'view' ? '' : 'active' %>">View Product</a>
+            </div>
+        </div>
+
+        
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #15d367"></i>
+            </div>
+            <div id="edit-text" class="text">
+                <a href="http://localhost:3000/update-product" class="<%= currentUrl === 'edit' ? '' : 'active' %>">Edit Product</a>
+            </div>
+        </div>
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-trash-o" aria-hidden="true" style="color: #e1396e"></i>
+            </div>
+            <div id="remove-text" class="text">
+                <a href="http://localhost:3000/remove-product" class="<%= currentUrl === 'remove' ? '' : 'active' %>">Remove Product</a>
+            </div>
+        </div>
+
+        <hr>
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-diamond" aria-hidden="true" style="color: #0ab49d"></i>
+            </div>
+            <div id="view-text" class="text" >
+                
+                <a href="http://localhost:3000/view-products" class="active"><%= data.appConfig.numberOfProducts %> Products</a>
+                
+            </div>
+            <div class="new">
+                New
+
+            </div>
+        </div>
+
+        
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-bell-o" aria-hidden="true" style="color: #0ab49d"></i>
+            </div>
+            <div id="notification-text" class="text"> 
+                <a href="http://localhost:3000/notification" class="<%= currentUrl === 'notification' ? '' : 'active' %>">Notification</a>
+            </div>
+            
+            <% if (data.appConfig.notification.length > 0) { %>
+                <div class="new notefication">
+                    &nbsp;<%= data.appConfig.notification.length %>&nbsp;
+
+                </div>
+            
+            <% } %>
+            
+           
+        </div>
+
+
+        <div class="button">
+            <div class="icon"> 
+                <i class="fa fa-envelope-o" aria-hidden="true" style="color: #0ab49d"></i>
+            </div>
+            <div id="email-text" class="text">
+                <a href="http://localhost:3000/email" class="<%= currentUrl === 'email' ? '' : 'active' %>">Email Supplier</a>
+            </div>
+        </div>
+
+        <div class="nav-panel-buttons">
+            <form class="btn-form" action="http://localhost:3000/logout" method="get">
+                <button class="log-out-button nav-general-button" type="submit" id="sign-out">
+                    Sign Out
+                </button>
+            </form>
+            <button class="learn-more-button nav-general-button">
+                Learn More
+            </button>
+
+        </div>
+
+
+    </div>
+</div>

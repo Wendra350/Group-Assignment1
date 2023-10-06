@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.appConfig.title %></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+
+    
+
+</head>
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <!-- side panel -->
+        
+        <%- include("./partials/side-nav-bar", {currentUrl: 'notification'}) %>
+        
+        <!-- Container -->
+        <div class="container">
+            
+         <%- include("./partials/header") %>
+
+            <!-- Dashboard -->
+            <div class="dashboard" style="background-color: white;">
+                <div  class="dashboard-main" style="display:flex; justify-content:  center;" >
+                    <div class="notification-container">
+                        <% if (data.appConfig.notification.length > 0) { %>
+                        <% data.appConfig.notification.forEach((item, index) => { %>
+                            <div class="notification">
+                                <div class="notification-icon">
+                                    <div class="icon">
+                                        <div class="not">
+                                            Notification <%= index + 1 %>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-comments-o" aria-hidden="true" style="color: #159689"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="message">
+                                    <div class="content">
+
+                                        Hello <%= appConfig.fullname %>! We would like to inform you that product <span class="green">"<%= item.productName %>"</span>  is currently out of stock, and we have only <span class="green"><%= item.quantity %></span> units left in our remaining inventory. To restock or inquire about other products, please contact <span class="green"><%= item.supplier %></span> at <span class="blue"><%= item.supplierEmail %></span>
+                                    </div>
+                                    <div class="email">
+                                        <a href="http://localhost:3000/email">
+                                            <button class="card-button">
+                                                email
+                                            </button>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+                              
+                        <% }); %>
+                    <% } else { %>
+                      <p class="content" style="text-align: center;">You don't have any notification</p>
+                    <% } %>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

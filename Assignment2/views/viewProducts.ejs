@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.appConfig.title %></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/removeProductsContainer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+
+    
+
+</head>
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <!-- side panel -->
+        
+        <%- include("./partials/side-nav-bar", {currentUrl: 'view'}) %>
+        
+        <!-- Container -->
+        <div class="container">
+            
+         <%- include("./partials/header") %>
+
+            <!-- Dashboard  -->
+            
+            <div class="dashboard"  style="background-color: white;">
+                <div  class="dashboard-main" >
+                    <div class="data-container" id="view">
+                      
+                        
+                        <span id="total-records" style="display: none;"><%= data.dataArray.length %></span>
+                        <% if (data.dataArray.length > 0) { %>
+                            <div class="record sp bold">
+                                <div class="name sp bold">Product
+                                </div>
+                                <div class="price sp bold">Price
+                                </div>
+                                
+                                <div class="quantity sp bold">
+                                    Quantity
+                                </div>
+                                
+                                <div class="supplier sp bold">
+                                    Supplier
+                                </div>
+    
+                                <div class="supplierEmail" style="width: 30%;">
+                                    Supplier Email
+                                </div>
+                            </div>
+                                
+                            <% data.dataArray.forEach((item, index) => { %>
+                               <div id=<%= 'r' + index  %> class="record sp">
+                                    <div class="name sp">
+                                        
+                                     <i class="fa fa-archive"></i>&nbsp;<%= item.productName %>
+                                    </div>
+                                    <div class="price sp">
+                                        MWK <%= item.price %>
+                                    </div>
+                                    
+                                    <div class="quantity sp">
+                                        <%= item.quantity %>
+                                    </div>
+                                    
+                                    <div class="supplier sp">
+                                        <i class="fa fa-map-marker"></i>&nbsp;<%= item.supplier %>
+                                    </div>
+        
+                                    <div class="supplierEmail sp" style="width: 30%;">
+                                        <%= item.supplierEmail %>
+                                    </div>
+                                </div>
+                                  
+                            <% }); %>
+                        <% } else { %>
+                          <p class="content" style="text-align: center;">No Product available</p>
+                        <% } %>
+
+     
+
+
+
+                    </div>
+                       
+
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

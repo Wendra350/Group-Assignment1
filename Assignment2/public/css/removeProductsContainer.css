@@ -1,0 +1,66 @@
+.dashboard{
+    background-color: white;
+}
+.dashboard .record{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+.dashboard-main{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.data-container{
+    width: 90%;
+}
+.name{
+    color: #00A783;
+}
+.sp{
+    width: 20%;
+    margin-bottom: 0.3rem;
+}
+.record button{
+    background-color:  #cb0f4b;
+    color: #fff;
+    padding: 0.1rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 5rem;
+}
+.price, .quantity{
+    color: rgb(2, 129, 155);
+}
+.supplier{
+    color: #04637a;
+}
+.form{
+    display: flex;
+    justify-content: end;
+    width: 15%;
+}
+.supplierEmail{
+    width: 15%;
+    color: #04637a;
+}
+.bold{
+    font-weight: bold;
+}
+.hide{
+    display: none;
+}
+
+@media (max-width: 800px){
+    .quantity,  .price{
+      display: none;
+   }
+   .name, .form{
+       width: 40%;
+   }
+}

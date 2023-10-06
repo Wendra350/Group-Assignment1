@@ -1,0 +1,40 @@
+
+<div class="dashboard">
+    <div  class="dashboard-main">
+
+        <div class="full-container">
+            <div class="centered-container">
+            
+                <div class="form-container" >
+                    <div class="centered-text">Add Product</div>
+                    <form id="productForm" action="http://localhost:3000/insertProduct" method="post">
+                      <h3 class="validator" id="validator" >Quantity and Price fields must contain numerical values</h3>
+                      <label for="productName">Product Name:</label>
+                      <input type="text" id="productName" name="productName" required>
+                  
+                      <label for="productPrice">Price:</label>
+                      <input type="text" id="price" name="price" required>
+                  
+                      <label for="productQuantity">Quantity:</label>
+                      <input type="text" id="quantity" name="quantity" required>
+                  
+                      <label for="productSupplier">Supplier:</label>
+                      <input type="text" id="supplier" name="supplier" required>
+
+                      
+                      <label for="productSupplier">Supplier-Email:</label>
+                      <input type="text" id="supplierEmail" name="supplierEmail" required>
+                    
+                      <div class="centered-button">
+                            
+                        <button type="submit" >Add Product</button>
+                      </div>
+                  
+                      <div id="errorMessages" class="error-message"></div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+        <script src="js/dataValidation.js"></script>
+    </div>
+</div>
